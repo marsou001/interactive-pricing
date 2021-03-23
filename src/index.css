@@ -1,11 +1,19 @@
 @import url('https://fonts.google.com/specimen/Manrope');
 
 body {
+  background-color: hsl(230, 100%, 99%);
   margin: 0;
   font-family: 'Manrope', 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+main {
   text-align: center;
+  width: 90%;
+  max-width: 600px;
+  margin: auto;
+  margin-top: 4rem;
 }
 
 code {

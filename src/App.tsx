@@ -1,6 +1,12 @@
+import CallToAction from "./components/CallToAction/CallToAction";
+import PricingCard from "./components/PricingCard/PricingCard";
+
 function App() {
   return (
-    <>hh</>
+    <>
+      <CallToAction />
+      <PricingCard />
+    </>
   );
 }
 
