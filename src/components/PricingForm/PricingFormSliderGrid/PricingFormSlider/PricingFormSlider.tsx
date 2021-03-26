@@ -3,7 +3,11 @@ import iconSlider from "../../../../images/icon-slider.svg";
 
 interface PriceSliderProps {
     price: string;
-    thumbBackgroundColorOnFocus: string;
+    thumbBackgroundColorOnFocus: string;    
+}
+
+interface PricingFormSliderProps extends PriceSliderProps {    
+    handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const sliderThumbStyle = `
@@ -24,7 +28,9 @@ const sliderTrackStyle = `
     width: 100%;
     height: 8.4px;
     border-radius: 6px;
-    cursor: pointer;`;
+    cursor: pointer;
+`;
+
 const PricingFormSliderContainer = styled.div`
     grid-area: Slider;
 `;
@@ -58,12 +64,6 @@ const PriceSlider = styled.input`
             `linear-gradient(to right, hsl(174, 77%, 80%), hsl(174, 77%, 80%) ${props.price}%, hsl(218, 67%, 95%) ${props.price}%, hsl(218, 67%, 95%))`};
     }
 `;
-
-interface PricingFormSliderProps {
-    price: string;
-    thumbBackgroundColorOnFocus: string;
-    handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-}
 
 function PricingFormSlider({
     price,

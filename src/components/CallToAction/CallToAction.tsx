@@ -16,7 +16,7 @@ const CallToActionParagraph = styled.p`
 
 function CallToAction() {
     return (
-        <CallToActionContainer>
+        <CallToActionContainer id="call-to-action">
             <CallToActionHeader>Simple, traffic-based pricing</CallToActionHeader>
             <CallToActionParagraph>Sign-up for our 30-day trial.<br /> No credit card required</CallToActionParagraph>
         </CallToActionContainer>
