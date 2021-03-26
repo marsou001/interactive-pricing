@@ -2,12 +2,16 @@ import styled from 'styled-components';
 
 const CallToActionContainer = styled.section`
     font-size: 15px;
+    margin-bottom: 3rem;    
+`;
+    
+const CallToActionHeader = styled.h2`    
     color: hsl(227, 35%, 25%);
 `;
 
-const CallToActionHeader = styled.h2``;
 const CallToActionParagraph = styled.p`
-    line-height: 1.5rem;
+    color: hsl(225, 15%, 71%);
+    line-height: 1.4rem;
 `;
 
 function CallToAction() {

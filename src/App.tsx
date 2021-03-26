@@ -1,11 +1,11 @@
 import CallToAction from "./components/CallToAction/CallToAction";
-import PricingCard from "./components/PricingCard/PricingCard";
+import PricingForm from "./components/PricingForm/PricingForm";
 
 function App() {
   return (
     <>
       <CallToAction />
-      <PricingCard />
+      <PricingForm />
     </>
   );
 }
