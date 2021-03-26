@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import iconSlider from "../../../images/icon-slider.svg";
+import iconSlider from "../../../../images/icon-slider.svg";
 
 interface PriceSliderProps {
     price: string;

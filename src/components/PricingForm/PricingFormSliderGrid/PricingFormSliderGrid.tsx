@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import PricingFormSlider from "../PricingFormSlider/PricingFormSlider";
+import PricingFormSlider from "./PricingFormSlider/PricingFormSlider";
 
 interface PricingFormSliderGridProps {
     thumbBackgroundColorOnFocus: string;
