@@ -21,7 +21,7 @@ const PricingFormSliderGridContainer = styled.div`
     }
 `;
 
-const PricingFormPageViews = styled.span`
+const PricingFormSliderGridPageViews = styled.span`
     text-transform: uppercase;
     letter-spacing: 0.1rem;
     grid-area: PageViews;
@@ -30,7 +30,7 @@ const PricingFormPageViews = styled.span`
     }
 `;
 
-const PricingFormPrice = styled.span`
+const PricingFormSliderGridPrice = styled.span`
     grid-area: Price;
     @media screen and (min-width: 500px) {
         text-align: right;
@@ -53,16 +53,16 @@ function PricingFormSliderGrid({
 }: PricingFormSliderGridProps) {
     return (
         <PricingFormSliderGridContainer>
-            <PricingFormPageViews>100k pageviews</PricingFormPageViews>
+            <PricingFormSliderGridPageViews>100k pageviews</PricingFormSliderGridPageViews>
             <PricingFormSlider
                 price={price}
                 thumbBackgroundColorOnFocus={thumbBackgroundColorOnFocus}
                 handleChange={handleChange}
             />
-            <PricingFormPrice>
+            <PricingFormSliderGridPrice>
                 <span className="price">$16.00</span>
                 <span className="period"> / month</span>
-            </PricingFormPrice>
+            </PricingFormSliderGridPrice>
         </PricingFormSliderGridContainer>
     );
 }
