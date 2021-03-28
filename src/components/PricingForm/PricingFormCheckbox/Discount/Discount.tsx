@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 const Discount = styled.span`
-    color: hsla(15, 100%, 70%, 1);
-    background-color: hsla(15, 100%, 70%, 0.2);
+    color: hsl(15, 100%, 70%);
+    background-color: hsl(14, 92%, 95%);
     display: inline-block;
     margin-left: 5px;
     padding: 5px 9px;
