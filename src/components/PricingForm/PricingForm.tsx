@@ -40,6 +40,7 @@ function PricingCard(): JSX.Element {
             <PricingFormSliderGrid
                 thumbBackgroundColorOnFocus={thumbBackgroundColorOnFocus}
                 pageViews={pageViews}
+                isYearly={isYearly}
                 handleChange={handleChange}
             />
             <PricingFormCheckbox isYearly={isYearly} handleClick={handleClick} />
