@@ -6,7 +6,7 @@ import PricingFormSliderGrid from "./PricingFormSliderGrid/PricingFormSliderGrid
 const PricingFormContainer = styled.section`
     color: hsl(225, 15%, 71%);
     background-color: #fff;
-    font-size: 0.8rem;
+    font-size: .7rem;
     padding: 1.5rem;
     border-radius: 6px;
     box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
@@ -15,7 +15,7 @@ const PricingFormContainer = styled.section`
             "PageViews Price"
             "Slider Slider";
         align-items: center;
-        padding: 1.9rem;
+        padding: 2.5rem;
     }
 `;
 

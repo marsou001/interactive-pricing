@@ -4,10 +4,7 @@ const PricingFormCheckboxFlex = styled.div`
     font-size: 0.7rem;
     display: flex;
     align-items: center;
-    width: 90%;
-    @media screen and (min-width: 500px) {
-        width: 90%;
-    }
+    justify-content: flex-end;    
 `;
 
 export default PricingFormCheckboxFlex;

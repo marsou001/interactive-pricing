@@ -12,7 +12,8 @@ const PricingFormSliderGridPrice = styled.span`
     }
     .period {
         display: inline-block;
-        transform: translate(5px, -5px);
+        margin-left: 5px;
+        transform: translateY(-5px);
     }
 `;
 
