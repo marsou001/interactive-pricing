@@ -12,7 +12,7 @@ interface PricingFormCheckboxProps {
 
 const GlobalStyle = createGlobalStyle`
     .checkbox-active {
-        background-color: hsl(174, 77%, 80%);
+        background-color: hsl(174, 86%, 45%);
         &::before {
             left: 40px;
         }
