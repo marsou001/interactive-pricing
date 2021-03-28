@@ -5,7 +5,7 @@ import PricingFormSliderGridPrice from "./PricingFormSliderGridPrice/PricingForm
 
 interface PricingFormSliderGridProps {
     thumbBackgroundColorOnFocus: string;
-    price: string;
+    pageViews: string;
     handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
@@ -15,6 +15,7 @@ const PricingFormSliderGridContainer = styled.div`
         "PageViews"
         "Slider"
         "Price";
+    margin-bottom: 1rem;
     @media screen and (min-width: 500px) {
         grid-template-areas:
             "PageViews Price"
@@ -25,19 +26,23 @@ const PricingFormSliderGridContainer = styled.div`
 
 function PricingFormSliderGrid({
     thumbBackgroundColorOnFocus,
-    price,
+    pageViews,
     handleChange,
-}: PricingFormSliderGridProps) {
+}: PricingFormSliderGridProps): JSX.Element {
+    const price: string = Math.floor(parseInt(pageViews) / 2).toFixed(2);
+
     return (
         <PricingFormSliderGridContainer>
-            <PricingFormSliderGridPageViews>100k pageviews</PricingFormSliderGridPageViews>
+            <PricingFormSliderGridPageViews>
+                {pageViews}k pageviews
+            </PricingFormSliderGridPageViews>
             <PricingFormSlider
-                price={price}
+                pageViews={pageViews}
                 thumbBackgroundColorOnFocus={thumbBackgroundColorOnFocus}
                 handleChange={handleChange}
             />
             <PricingFormSliderGridPrice>
-                <span className="price">$16.00</span>
+                <span className="price">${price}</span>
                 <span className="period"> / month</span>
             </PricingFormSliderGridPrice>
         </PricingFormSliderGridContainer>

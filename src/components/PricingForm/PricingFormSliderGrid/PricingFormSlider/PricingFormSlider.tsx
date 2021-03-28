@@ -2,7 +2,7 @@ import styled from "styled-components";
 import iconSlider from "../../../../images/icon-slider.svg";
 
 interface PriceSliderProps {
-    price: string;
+    pageViews: string;
     thumbBackgroundColorOnFocus: string;    
 }
 
@@ -38,7 +38,7 @@ const PricingFormSliderContainer = styled.div`
 const PriceSlider = styled.input`
     ${sliderTrackStyle}
     background-image: ${(props: PriceSliderProps): string =>
-        `linear-gradient(to right, hsl(174, 77%, 80%), hsl(174, 77%, 80%) ${props.price}%, hsl(218, 67%, 95%) ${props.price}%, hsl(218, 67%, 95%))`};
+        `linear-gradient(to right, hsl(174, 77%, 80%), hsl(174, 77%, 80%) ${props.pageViews}%, hsl(218, 67%, 95%) ${props.pageViews}%, hsl(218, 67%, 95%))`};
     margin: 2.2rem 0;
     &::-webkit-slider-thumb {
         ${sliderThumbStyle}
@@ -61,12 +61,12 @@ const PriceSlider = styled.input`
     &::-moz-range-track {
         ${sliderTrackStyle}
         background-image: ${(props: PriceSliderProps): string =>
-            `linear-gradient(to right, hsl(174, 77%, 80%), hsl(174, 77%, 80%) ${props.price}%, hsl(218, 67%, 95%) ${props.price}%, hsl(218, 67%, 95%))`};
+            `linear-gradient(to right, hsl(174, 77%, 80%), hsl(174, 77%, 80%) ${props.pageViews}%, hsl(218, 67%, 95%) ${props.pageViews}%, hsl(218, 67%, 95%))`};
     }
 `;
 
 function PricingFormSlider({
-    price,
+    pageViews,
     thumbBackgroundColorOnFocus,
     handleChange,
 }: PricingFormSliderProps): JSX.Element {
@@ -75,12 +75,12 @@ function PricingFormSlider({
             <label>
                 <PriceSlider
                     type="range"
-                    min="0"
+                    min="1"
                     max="100"
-                    price={price}
+                    pageViews={pageViews}
                     thumbBackgroundColorOnFocus={thumbBackgroundColorOnFocus}
                     onChange={handleChange}
-                    value={price}
+                    value={pageViews}
                 />
             </label>
         </PricingFormSliderContainer>

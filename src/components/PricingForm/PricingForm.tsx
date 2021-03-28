@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
+import PricingFormCheckbox from "./PricingFormCheckbox/PricingFormCheckbox";
 import PricingFormSliderGrid from "./PricingFormSliderGrid/PricingFormSliderGrid";
 
 const PricingFormContainer = styled.section`
@@ -18,26 +19,30 @@ const PricingFormContainer = styled.section`
     }
 `;
 
-let thumbBackgroundColorOnFocus = "";
+let thumbBackgroundColorOnFocus: string;
 
-function PricingCard() {
-    const [price, setPrice] = useState("23");
+function PricingCard(): JSX.Element {
+    const [pageViews, setPageViews] = useState('75');
+    const [isYearly, setIsYearly] = useState(false);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
         thumbBackgroundColorOnFocus =
-            e.target.valueAsNumber > parseInt(price)
+            e.target.valueAsNumber > parseInt(pageViews)
                 ? "hsl(174, 67%, 41%)"
                 : "hsl(174, 77%, 80%)";
-        setPrice(e.target.value);
+        setPageViews(e.target.value);
     };
+
+    const handleClick = (): void => setIsYearly(prevState => !prevState);
 
     return (
         <PricingFormContainer>
             <PricingFormSliderGrid
                 thumbBackgroundColorOnFocus={thumbBackgroundColorOnFocus}
-                price={price}
+                pageViews={pageViews}
                 handleChange={handleChange}
             />
+            <PricingFormCheckbox isYearly={isYearly} handleClick={handleClick} />
         </PricingFormContainer>
     );
 }
