@@ -1,7 +1,8 @@
-@import url('https://fonts.google.com/specimen/Manrope');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@700&display=swap');
 
 body {
   background-color: hsl(230, 100%, 99%);
+  font-weight: 600;
   margin: 0;
   font-family: 'Manrope', 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
