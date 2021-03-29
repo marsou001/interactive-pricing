@@ -89,8 +89,12 @@ function PricingFormSlider({
             <PriceSlider
                 type="range"
                 id="page-views"
-                min="1"
-                max="100"        
+                min={1_000}
+                max={100_000}
+                step={1000}
+                aria-valuemin={1_000}
+                aria-valuemax={100_000}
+                aria-valuenow={pageViews}        
                 pageViews={pageViews}
                 thumbBackgroundColorOnFocus={thumbBackgroundColorOnFocus}
                 onChange={handleChange}

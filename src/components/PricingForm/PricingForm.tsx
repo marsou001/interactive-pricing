@@ -23,7 +23,7 @@ const PricingFormContainer = styled.section`
 let thumbBackgroundColorOnFocus: string;
 
 function PricingCard(): JSX.Element {
-    const [pageViews, setPageViews] = useState(75);
+    const [pageViews, setPageViews] = useState(50_000);
     const [isYearly, setIsYearly] = useState(false);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {

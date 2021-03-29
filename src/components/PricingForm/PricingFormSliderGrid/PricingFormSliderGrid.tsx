@@ -38,7 +38,7 @@ function PricingFormSliderGrid({
     return (
         <PricingFormSliderGridContainer>
             <PricingFormSliderGridPageViews>
-                {pageViews}k pageviews
+                {pageViews.toString().replace(/000$/, 'k')} pageviews
             </PricingFormSliderGridPageViews>
             <PricingFormSlider
                 pageViews={pageViews}
@@ -46,7 +46,7 @@ function PricingFormSliderGrid({
                 handleChange={handleChange}
             />
             <PricingFormSliderGridPrice>
-                <span className="price">${price.toFixed(2)}</span>
+                <span className="price">${price.toFixed(2).toString().replace(/(\d00)(?=\.00)/, '')}</span>
                 <span className="period"> / month</span>
             </PricingFormSliderGridPrice>
         </PricingFormSliderGridContainer>
