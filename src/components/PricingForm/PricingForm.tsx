@@ -2,6 +2,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import PricingFormCheckbox from "./PricingFormCheckbox/PricingFormCheckbox";
 import PricingFormSliderGrid from "./PricingFormSliderGrid/PricingFormSliderGrid";
+import PricingFormSubmit from "./PricingFormSubmit/PricingFormSubmit";
 
 const PricingFormContainer = styled.section`
     color: hsl(225, 15%, 71%);
@@ -44,6 +45,7 @@ function PricingCard(): JSX.Element {
                 handleChange={handleChange}
             />
             <PricingFormCheckbox isYearly={isYearly} handleClick={handleClick} />
+            <PricingFormSubmit />
         </PricingFormContainer>
     );
 }
