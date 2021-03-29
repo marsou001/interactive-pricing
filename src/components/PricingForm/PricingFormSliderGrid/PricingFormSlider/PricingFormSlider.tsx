@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import iconSlider from "../../../../images/icon-slider.svg";
+import VisuallyHiddenLabel from "../../../../Utils/VisuallyHiddenLabel/VisuallyHiddenLabel";
 
 interface PriceSliderProps {
     pageViews: number;
@@ -35,16 +36,7 @@ const PricingFormSliderContainer = styled.div`
     grid-area: Slider;
 `;
 
-const VisuallyHiddenLabel = styled.label`
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-`;
+
 
 const PriceSlider = styled.input`
     ${sliderTrackStyle}

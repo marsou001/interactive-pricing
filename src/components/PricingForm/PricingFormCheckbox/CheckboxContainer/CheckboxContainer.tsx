@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const CheckboxLabel = styled.label`
+const CheckboxContainer = styled.label`
     position: relative;
     display: inline-block;
     width: 70px;
@@ -8,4 +8,4 @@ const CheckboxLabel = styled.label`
     transform: scale(0.6);
 `;
 
-export default CheckboxLabel;
+export default CheckboxContainer;

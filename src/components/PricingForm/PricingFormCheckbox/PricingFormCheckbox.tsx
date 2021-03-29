@@ -1,9 +1,10 @@
 import styled, { createGlobalStyle } from "styled-components";
 import PricingFormCheckboxFlex from './PricingFormCheckboxFlex/PricingFormCheckboxFlex';
-import CheckboxLabel from './CheckboxLabel/CheckboxLabel';
+import CheckboxContainer from './CheckboxContainer/CheckboxContainer';
 import CustomCheckbox from './CustomCheckbox/CustomCheckbox';
 import Input from './Input/Input';
 import Discount from './Discount/Discount';
+import VisuallyHiddenLabel from "../../../Utils/VisuallyHiddenLabel/VisuallyHiddenLabel";
 
 interface PricingFormCheckboxProps {
     isYearly: boolean;
@@ -38,13 +39,14 @@ function PricingFormCheckbox({
             <PricingFormCheckboxContainer>
                 <PricingFormCheckboxFlex>
                     <MonthlyBilling>Monthly billing</MonthlyBilling>
-                    <CheckboxLabel>
-                        <Input type="checkbox" />
+                    <CheckboxContainer>
+                        <VisuallyHiddenLabel htmlFor='billing-type'>Choose between monthly billing and yearly billing</VisuallyHiddenLabel>
+                        <Input type="checkbox" id='billing-type' />
                         <CustomCheckbox
                             onClick={handleClick}
                             className={isYearly ? "checkbox-active" : ""}
                         />
-                    </CheckboxLabel>
+                    </CheckboxContainer>
                     <YearlyBilling>Yearly billing</YearlyBilling>
                     <Discount>-25% <span>discount</span></Discount>
                 </PricingFormCheckboxFlex>
