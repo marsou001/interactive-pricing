@@ -5,7 +5,7 @@ import PricingFormSliderGridPrice from "./PricingFormSliderGridPrice/PricingForm
 
 interface PricingFormSliderGridProps {
     thumbBackgroundColorOnFocus: string;
-    pageViews: string;
+    pageViews: number;
     isYearly: boolean;
     handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
@@ -31,7 +31,7 @@ function PricingFormSliderGrid({
     isYearly,
     handleChange,
 }: PricingFormSliderGridProps): JSX.Element {
-    const monthlyPrice: number = Math.floor(parseInt(pageViews) / 2);
+    const monthlyPrice: number = Math.floor(pageViews / 2);
     const annualPrice: number = Math.floor(monthlyPrice * (10 / 12));
     const price: number = isYearly ? annualPrice : monthlyPrice;    
 

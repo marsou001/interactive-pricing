@@ -2,11 +2,11 @@ import styled from "styled-components";
 import iconSlider from "../../../../images/icon-slider.svg";
 
 interface PriceSliderProps {
-    pageViews: string;
-    thumbBackgroundColorOnFocus: string;    
+    pageViews: number;
+    thumbBackgroundColorOnFocus: string;
 }
 
-interface PricingFormSliderProps extends PriceSliderProps {    
+interface PricingFormSliderProps extends PriceSliderProps {
     handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
@@ -33,6 +33,17 @@ const sliderTrackStyle = `
 
 const PricingFormSliderContainer = styled.div`
     grid-area: Slider;
+`;
+
+const VisuallyHiddenLabel = styled.label`
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
 `;
 
 const PriceSlider = styled.input`
@@ -72,17 +83,19 @@ function PricingFormSlider({
 }: PricingFormSliderProps): JSX.Element {
     return (
         <PricingFormSliderContainer>
-            <label>
-                <PriceSlider
-                    type="range"
-                    min="1"
-                    max="100"
-                    pageViews={pageViews}
-                    thumbBackgroundColorOnFocus={thumbBackgroundColorOnFocus}
-                    onChange={handleChange}
-                    value={pageViews}
-                />
-            </label>
+            <VisuallyHiddenLabel htmlFor="page-views">
+                Select number of page views
+            </VisuallyHiddenLabel>
+            <PriceSlider
+                type="range"
+                id="page-views"
+                min="1"
+                max="100"        
+                pageViews={pageViews}
+                thumbBackgroundColorOnFocus={thumbBackgroundColorOnFocus}
+                onChange={handleChange}
+                value={pageViews}
+            />
         </PricingFormSliderContainer>
     );
 }
