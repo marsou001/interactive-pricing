@@ -46,7 +46,7 @@ function PricingFormSliderGrid({
                 handleChange={handleChange}
             />
             <PricingFormSliderGridPrice>
-                <span className="price">${price.toFixed(2).toString().replace(/(\d00)(?=\.00)/, '')}</span>
+                <span className="price">${price.toFixed(2).toString().replace(/\d{3}(?=\.00)/, '')}</span>
                 <span className="period"> / month</span>
             </PricingFormSliderGridPrice>
         </PricingFormSliderGridContainer>
