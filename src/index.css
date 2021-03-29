@@ -1,9 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@700&display=swap');
 
 body {
-  background-image: url('./images/bg-pattern.svg');
-  background-repeat: no-repeat;
-  background-position: 0 -80px;
+  background: url('./images/pattern-circles.svg') no-repeat 50% 7%, url('./images/bg-pattern.svg') no-repeat 0 -80px;
   font-weight: 600;
   margin: 0;
   font-family: 'Manrope', 'Roboto', sans-serif;
