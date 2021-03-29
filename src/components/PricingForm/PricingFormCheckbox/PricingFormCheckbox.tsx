@@ -1,9 +1,9 @@
 import styled, { createGlobalStyle } from "styled-components";
-import PricingFormCheckboxFlex from './PricingFormCheckboxFlex/PricingFormCheckboxFlex';
-import CheckboxContainer from './CheckboxContainer/CheckboxContainer';
-import CustomCheckbox from './CustomCheckbox/CustomCheckbox';
-import Input from './Input/Input';
-import Discount from './Discount/Discount';
+import PricingFormCheckboxFlex from "./PricingFormCheckboxFlex/PricingFormCheckboxFlex";
+import CheckboxContainer from "./CheckboxContainer/CheckboxContainer";
+import CustomCheckbox from "./CustomCheckbox/CustomCheckbox";
+import Input from "./Input/Input";
+import Discount from "./Discount/Discount";
 import VisuallyHiddenLabel from "../../../Utils/VisuallyHiddenLabel/VisuallyHiddenLabel";
 
 interface PricingFormCheckboxProps {
@@ -40,15 +40,19 @@ function PricingFormCheckbox({
                 <PricingFormCheckboxFlex>
                     <MonthlyBilling>Monthly billing</MonthlyBilling>
                     <CheckboxContainer>
-                        <VisuallyHiddenLabel htmlFor='billing-type'>Choose between monthly billing and yearly billing</VisuallyHiddenLabel>
-                        <Input type="checkbox" id='billing-type' />
+                        <VisuallyHiddenLabel htmlFor="billing-type">
+                            Choose between monthly billing and yearly billing
+                        </VisuallyHiddenLabel>
+                        <Input type="checkbox" id="billing-type" />
                         <CustomCheckbox
                             onClick={handleClick}
                             className={isYearly ? "checkbox-active" : ""}
                         />
                     </CheckboxContainer>
                     <YearlyBilling>Yearly billing</YearlyBilling>
-                    <Discount>-25% <span>discount</span></Discount>
+                    <Discount>
+                        -25% <span>discount</span>
+                    </Discount>
                 </PricingFormCheckboxFlex>
             </PricingFormCheckboxContainer>
         </>

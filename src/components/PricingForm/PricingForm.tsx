@@ -7,7 +7,7 @@ import PricingFormSubmit from "./PricingFormSubmit/PricingFormSubmit";
 const PricingFormContainer = styled.section`
     color: hsl(225, 15%, 71%);
     background-color: #fff;
-    font-size: .7rem;
+    font-size: 0.7rem;
     padding: 1.5rem;
     border-radius: 6px;
     box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
@@ -34,7 +34,7 @@ function PricingCard(): JSX.Element {
         setPageViews(e.target.valueAsNumber);
     };
 
-    const handleClick = (): void => setIsYearly(prevState => !prevState);
+    const handleClick = (): void => setIsYearly((prevState) => !prevState);
 
     return (
         <PricingFormContainer>
@@ -44,7 +44,10 @@ function PricingCard(): JSX.Element {
                 isYearly={isYearly}
                 handleChange={handleChange}
             />
-            <PricingFormCheckbox isYearly={isYearly} handleClick={handleClick} />
+            <PricingFormCheckbox
+                isYearly={isYearly}
+                handleClick={handleClick}
+            />
             <PricingFormSubmit />
         </PricingFormContainer>
     );

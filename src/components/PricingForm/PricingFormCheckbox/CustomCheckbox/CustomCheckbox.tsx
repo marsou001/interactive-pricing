@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const CustomCheckbox = styled.div`
     background-color: hsl(223, 50%, 87%);

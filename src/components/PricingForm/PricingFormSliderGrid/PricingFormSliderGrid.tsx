@@ -33,12 +33,12 @@ function PricingFormSliderGrid({
 }: PricingFormSliderGridProps): JSX.Element {
     const monthlyPrice: number = Math.floor(pageViews / 2);
     const annualPrice: number = Math.floor(monthlyPrice * (10 / 12));
-    const price: number = isYearly ? annualPrice : monthlyPrice;    
+    const price: number = isYearly ? annualPrice : monthlyPrice;
 
     return (
         <PricingFormSliderGridContainer>
             <PricingFormSliderGridPageViews>
-                {pageViews.toString().replace(/000$/, 'k')} pageviews
+                {pageViews.toString().replace(/000$/, "k")} pageviews
             </PricingFormSliderGridPageViews>
             <PricingFormSlider
                 pageViews={pageViews}
@@ -46,7 +46,13 @@ function PricingFormSliderGrid({
                 handleChange={handleChange}
             />
             <PricingFormSliderGridPrice>
-                <span className="price">${price.toFixed(2).toString().replace(/\d{3}(?=\.00)/, '')}</span>
+                <span className="price">
+                    $
+                    {price
+                        .toFixed(2)
+                        .toString()
+                        .replace(/\d{3}(?=\.00)/, "")}
+                </span>
                 <span className="period"> / month</span>
             </PricingFormSliderGridPrice>
         </PricingFormSliderGridContainer>

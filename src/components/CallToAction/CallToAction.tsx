@@ -1,11 +1,11 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const CallToActionContainer = styled.section`
     font-size: 15px;
-    margin-bottom: 3rem;    
+    margin-bottom: 3rem;
 `;
-    
-const CallToActionHeader = styled.h2`    
+
+const CallToActionHeader = styled.h2`
     color: hsl(227, 35%, 25%);
 `;
 
@@ -17,10 +17,15 @@ const CallToActionParagraph = styled.p`
 function CallToAction() {
     return (
         <CallToActionContainer id="call-to-action">
-            <CallToActionHeader>Simple, traffic-based pricing</CallToActionHeader>
-            <CallToActionParagraph>Sign-up for our 30-day trial.<br /> No credit card required</CallToActionParagraph>
+            <CallToActionHeader>
+                Simple, traffic-based pricing
+            </CallToActionHeader>
+            <CallToActionParagraph>
+                Sign-up for our 30-day trial.
+                <br /> No credit card required
+            </CallToActionParagraph>
         </CallToActionContainer>
-    )
+    );
 }
 
 export default CallToAction;

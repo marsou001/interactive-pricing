@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Discount = styled.span`
     color: hsl(15, 100%, 70%);
@@ -9,10 +9,10 @@ const Discount = styled.span`
     border-radius: 9999px;
     transform: translateX(3px);
     @media screen and (max-width: 500px) {
-        >span {
+        > span {
             display: none;
         }
-    }    
+    }
 `;
 
 export default Discount;

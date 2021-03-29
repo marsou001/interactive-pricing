@@ -36,8 +36,6 @@ const PricingFormSliderContainer = styled.div`
     grid-area: Slider;
 `;
 
-
-
 const PriceSlider = styled.input`
     ${sliderTrackStyle}
     background-image: ${(props: PriceSliderProps): string =>
@@ -86,7 +84,7 @@ function PricingFormSlider({
                 step={1000}
                 aria-valuemin={1_000}
                 aria-valuemax={100_000}
-                aria-valuenow={pageViews}        
+                aria-valuenow={pageViews}
                 pageViews={pageViews}
                 thumbBackgroundColorOnFocus={thumbBackgroundColorOnFocus}
                 onChange={handleChange}
