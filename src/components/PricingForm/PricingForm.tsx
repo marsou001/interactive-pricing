@@ -34,7 +34,7 @@ function PricingCard(): JSX.Element {
         setPageViews(e.target.valueAsNumber);
     };
 
-    const handleClick = (): void => setIsYearly((prevState) => !prevState);
+    const handleEvent = (): void => setIsYearly((prevState) => !prevState);
 
     return (
         <PricingFormContainer>
@@ -46,7 +46,7 @@ function PricingCard(): JSX.Element {
             />
             <PricingFormCheckbox
                 isYearly={isYearly}
-                handleClick={handleClick}
+                handleEvent={handleEvent}
             />
             <PricingFormSubmit />
         </PricingFormContainer>
