@@ -13,9 +13,9 @@ interface PricingFormCheckboxProps {
 }
 
 const GlobalStyle = createGlobalStyle`
-.custom-checkbox-focus {
-    outline: 2px solid black;    
-}
+    .custom-checkbox-focus {
+        outline: 2px solid black;    
+    }
     .custom-checkbox-active {
         background-color: hsl(174, 86%, 45%);
         &::before {
