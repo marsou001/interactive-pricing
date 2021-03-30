@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const CheckboxContainer = styled.label`
+const CheckboxContainer = styled.div`
     position: relative;
     display: inline-block;
     width: 70px;
