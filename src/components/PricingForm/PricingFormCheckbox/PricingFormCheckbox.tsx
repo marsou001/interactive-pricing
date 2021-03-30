@@ -19,7 +19,7 @@ const GlobalStyle = createGlobalStyle`
     .custom-checkbox-active {
         background-color: hsl(174, 86%, 45%);
         &::before {
-            left: 40px;
+            left: clamp(55%, 57%, 60%);
         }
     }
 `;
