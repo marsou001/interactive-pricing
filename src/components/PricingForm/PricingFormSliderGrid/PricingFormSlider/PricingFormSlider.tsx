@@ -79,6 +79,7 @@ function PricingFormSlider({
             <PriceSlider
                 type="range"
                 id="page-views"
+                name='page views'
                 min={1_000}
                 max={100_000}
                 step={1000}
