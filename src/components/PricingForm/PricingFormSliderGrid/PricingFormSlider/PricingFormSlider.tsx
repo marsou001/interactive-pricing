@@ -39,7 +39,7 @@ const PricingFormSliderContainer = styled.div`
 const PriceSlider = styled.input`
     ${sliderTrackStyle}
     background-image: ${(props: PriceSliderProps): string =>
-        `linear-gradient(to right, hsl(174, 77%, 80%), hsl(174, 77%, 80%) ${props.pageViews}%, hsl(218, 67%, 95%) ${props.pageViews}%, hsl(218, 67%, 95%))`};
+        `linear-gradient(to right, hsl(174, 77%, 80%), hsl(174, 77%, 80%) ${props.pageViews / 1000}%, hsl(218, 67%, 95%) ${props.pageViews / 1000}%, hsl(218, 67%, 95%))`};
     margin: 2.2rem 0;
     &::-webkit-slider-thumb {
         ${sliderThumbStyle}
