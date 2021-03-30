@@ -51,10 +51,12 @@ const PriceSlider = styled.input`
     &:focus {
         outline: none;
         &::-webkit-slider-thumb {
+            background-color: hsl(174, 67%, 41%);
             background-color: ${(props: PriceSliderProps): string =>
                 props.thumbBackgroundColorOnFocus};
         }
         &::-moz-range-thumb {
+            background-color: hsl(174, 67%, 41%);
             background-color: ${(props: PriceSliderProps): string =>
                 props.thumbBackgroundColorOnFocus};
         }
