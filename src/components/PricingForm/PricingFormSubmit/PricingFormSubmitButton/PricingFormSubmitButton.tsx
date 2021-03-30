@@ -12,6 +12,10 @@ const PricingFormSubmitButton = styled.input`
     &:hover {
         color: hsl(230, 100%, 99%);
     }
+    &:focus {
+        color: hsl(230, 100%, 99%);
+        background-color: hsl(227, 35%, 14%);
+    }
 `;
 
 export default PricingFormSubmitButton;
