@@ -3,7 +3,7 @@ import iconSlider from "../../../../images/icon-slider.svg";
 import VisuallyHiddenLabel from "../../../../Utils/VisuallyHiddenLabel/VisuallyHiddenLabel";
 
 interface PriceSliderProps {
-    pageViews: number;
+    pageViews: string;
     thumbBackgroundColorOnFocus: string;
 }
 
@@ -39,7 +39,7 @@ const PricingFormSliderContainer = styled.div`
 const PriceSlider = styled.input`
     ${sliderTrackStyle}
     background-image: ${(props: PriceSliderProps): string =>
-        `linear-gradient(to right, hsl(174, 77%, 80%), hsl(174, 77%, 80%) ${props.pageViews / 1000}%, hsl(218, 67%, 95%) ${props.pageViews / 1000}%, hsl(218, 67%, 95%))`};
+        `linear-gradient(to right, hsl(174, 77%, 80%), hsl(174, 77%, 80%) ${parseInt(props.pageViews) / 1000}%, hsl(218, 67%, 95%) ${parseInt(props.pageViews) / 1000}%, hsl(218, 67%, 95%))`};
     margin: 2.2rem 0;
     &::-webkit-slider-thumb {
         ${sliderThumbStyle}
@@ -87,7 +87,7 @@ function PricingFormSlider({
                 step={1000}
                 aria-valuemin={1_000}
                 aria-valuemax={100_000}
-                aria-valuenow={pageViews}
+                aria-valuenow={parseInt(pageViews)}
                 pageViews={pageViews}
                 thumbBackgroundColorOnFocus={thumbBackgroundColorOnFocus}
                 onChange={handleChange}
