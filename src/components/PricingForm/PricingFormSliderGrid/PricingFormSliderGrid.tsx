@@ -37,7 +37,7 @@ function PricingFormSliderGrid({
 
     return (
         <PricingFormSliderGridContainer>
-            <PricingFormSliderGridPageViews>
+            <PricingFormSliderGridPageViews data-testid='page-views'>
                 {pageViews.toString().replace(/000$/, "k")} pageviews
             </PricingFormSliderGridPageViews>
             <PricingFormSlider
@@ -45,7 +45,7 @@ function PricingFormSliderGrid({
                 thumbBackgroundColorOnFocus={thumbBackgroundColorOnFocus}
                 handleChange={handleChange}
             />
-            <PricingFormSliderGridPrice data-testid='first-test-id'>
+            <PricingFormSliderGridPrice data-testid='price-per-month'>
                 <span className="price">
                     $
                     {price

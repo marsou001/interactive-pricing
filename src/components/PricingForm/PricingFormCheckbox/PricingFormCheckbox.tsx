@@ -44,6 +44,8 @@ function PricingFormCheckbox({
         handleEvent();
     };
 
+    const handleHiddenInputClick = (): void => handleEvent();
+
     const handleHiddenInputFocus = (): void => {
         customCheckboxRef.current?.classList.add("custom-checkbox-focus");
     };
@@ -75,6 +77,7 @@ function PricingFormCheckbox({
                             role="switch"
                             id="billing-type"
                             name="yearly"
+                            onClick={handleHiddenInputClick}
                             onFocus={handleHiddenInputFocus}
                             onBlur={handleHiddenInputBlur}
                             onKeyDown={handleHiddenInputKeyDown}
