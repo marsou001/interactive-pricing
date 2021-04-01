@@ -41,7 +41,6 @@ function PricingFormCheckbox({
     const customCheckboxRef = useRef<HTMLDivElement>(null);
     const customCheckboxClick = () => {
         inputRef.current?.click();
-        handleEvent();
     };
 
     const handleHiddenInputClick = (): void => handleEvent();
@@ -88,6 +87,7 @@ function PricingFormCheckbox({
                             onClick={customCheckboxClick}
                             className={isYearly ? "custom-checkbox-active" : ""}
                             aria-hidden="true"
+                            data-testid='custom-checkbox'
                         />
                     </CheckboxContainer>
                     <YearlyBilling>Yearly billing</YearlyBilling>
