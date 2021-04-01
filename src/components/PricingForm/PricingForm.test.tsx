@@ -11,13 +11,13 @@ describe("PricingFormSliderGrid and PricingFormCheckbox components", () => {
         pageViewsTextContent: string,
         pricePerMonthTextContent: string,
         sliderInputValue: string,
-        switchInputIsChecked: boolean
+        switchHiddenInputIsChecked: boolean
     ): void => {
         expect(pageViews).toHaveTextContent(pageViewsTextContent);
         expect(pricePerMonth).toHaveTextContent(pricePerMonthTextContent);
         expect(sliderInput).toHaveValue(sliderInputValue);
 
-        if (switchInputIsChecked) {
+        if (switchHiddenInputIsChecked) {
             expect(switchHiddenInput).toBeChecked();
         } else {
             expect(switchHiddenInput).not.toBeChecked();
