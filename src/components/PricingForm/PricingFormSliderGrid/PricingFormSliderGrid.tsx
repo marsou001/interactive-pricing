@@ -33,7 +33,7 @@ function PricingFormSliderGrid({
 }: PricingFormSliderGridProps): JSX.Element {
     const pageviews: string = pageViews.toString().replace(/000$/, "");
     const displayedPageViews: string = parseInt(pageViews) >= 10_000 ? pageviews : `0${pageviews}`;  
-    
+
     const monthlyPrice: number = Math.floor(parseInt(pageViews) / 2);
     const annualPrice: number = Math.floor(monthlyPrice * (10 / 12));
     const price: number = isYearly ? annualPrice : monthlyPrice;
@@ -41,7 +41,7 @@ function PricingFormSliderGrid({
     return (
         <PricingFormSliderGridContainer>
             <PricingFormSliderGridPageViews data-testid='page-views'>
-                <span className='absolute'>{displayedPageViews}</span>k pageviews
+                <div><span className='absolute'>{displayedPageViews}</span>k pageviews</div>
             </PricingFormSliderGridPageViews>
             <PricingFormSlider
                 pageViews={pageViews}
