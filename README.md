@@ -1,3 +1,31 @@
+I created this pricing component project as part of a [frontendmentor](frontendmentor.io) challenge.
+
+It's a small app that allows users to set the page views they want to do something with, and shows the monthly price, or the yearly price if they choose to (billed annually).
+
+# What I learned
+
+## TypeScript
+
+The purpose of this project was to solidify my *TypeScript* knowledge. This is the first time I use the `useState` and `useRef` hooks inside of a React TypeScript project, with their types, generics and other quirks.
+
+## Accessibility
+
+I also wanted to strenghten my newly acquired knowledge about *web accessibility*. I created this project with all users in mind this time. I made sure all main elements are:
+- Reached with the *Tab* key.
+- Focusable, with specific style applied to the element when focused on.
+- Have specific *role* (`role` attribute).
+- Have the appropriate `aria-*` attributes.
+
+## Testing 
+
+I learned how to write effective tests. I used the testing-library for that. I used the `userEvent` and `fireEvent` functions for the first time, because this app depends on user interaction.
+
+While writing tests, I catched two major bugs that I wouldn't otherwise have caught. From now on, tests are a must.
+
+---
+
+The rest is the boilerplate from `create-react-app`;
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
