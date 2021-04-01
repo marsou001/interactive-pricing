@@ -39,9 +39,8 @@ function PricingFormCheckbox({
 }: PricingFormCheckboxProps): JSX.Element {
     const inputRef = useRef<HTMLInputElement>(null);
     const customCheckboxRef = useRef<HTMLDivElement>(null);
-    const customCheckboxClick = () => {
-        inputRef.current?.click();
-    };
+    
+    const customCheckboxClick = () => inputRef.current?.click();
 
     const handleHiddenInputClick = (): void => handleEvent();
 
