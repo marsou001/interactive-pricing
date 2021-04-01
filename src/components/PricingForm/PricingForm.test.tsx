@@ -1,54 +1,53 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import PricingForm from "./PricingForm";
-import PricingFormSubmit from "./PricingFormSubmit/PricingFormSubmit";
 
-describe("PricingForm component", () => {
-    test("initial rendering", () => {
+describe("PricingFormSliderGrid and PricingFormCheckbox components", () => {
+    let pageViews: HTMLElement,
+        pricePerMonth: HTMLElement,
+        sliderInput: HTMLElement,
+        switchInput: HTMLElement;
+    const expectAfterEach = (
+        pageViewsTextContent: string,
+        pricePerMonthTextContent: string,
+        sliderInputValue: string,
+        switchInputIsChecked: boolean
+    ): void => {
+        expect(pageViews).toHaveTextContent(pageViewsTextContent);
+        expect(pricePerMonth).toHaveTextContent(pricePerMonthTextContent);
+        expect(sliderInput).toHaveValue(sliderInputValue);
+
+        if (switchInputIsChecked) {
+            expect(switchInput).toBeChecked();
+        } else {
+            expect(switchInput).not.toBeChecked();
+        }
+    };
+
+    beforeEach(() => {
         render(<PricingForm />);
-        const pageViews = screen.getByText(/50k\spageviews/);
-        const pricePerMonth = screen.getByTestId("price-per-month");
-        const sliderInput = screen.getByRole("slider");
-        const switchInput = screen.getByRole("switch");
-
-        expect(pageViews).toBeInTheDocument();
-        expect(pricePerMonth).toHaveTextContent("$25.00/ month");
-        expect(sliderInput).toHaveValue("50000");
-        expect(switchInput).not.toBeChecked();
+        pageViews = screen.getByTestId("page-views");
+        pricePerMonth = screen.getByTestId("price-per-month");
+        sliderInput = screen.getByRole("slider");
+        switchInput = screen.getByRole("switch");
     });
 
-    test("rendering after sliding to the right", () => {
-        render(<PricingForm />);
+    test("initial rendering", () => {
+        expectAfterEach("50k pageviews", "$25.00/ month", "50000", false);
+    });
 
-        const pageViews = screen.getByTestId("page-views");
-        const pricePerMonth = screen.getByTestId("price-per-month");
-        const sliderInput = screen.getByRole("slider");
-        const switchInput = screen.getByRole("switch");
-
+    test("values after sliding and checking the box", () => {
         fireEvent.change(sliderInput, {
             target: {
                 value: "75000",
             },
         });
 
-        expect(pageViews).toHaveTextContent("75k pageviews");
-        expect(pricePerMonth).toHaveTextContent("$37.00/ month");
-        expect(sliderInput).toHaveValue("75000");
-        expect(switchInput).not.toBeChecked();
-
+        expectAfterEach("75k pageviews", "$37.00/ month", "75000", false);
         userEvent.click(switchInput);
-
-        expect(pageViews).toHaveTextContent("75k pageviews");
-        expect(pricePerMonth).toHaveTextContent("$31.00/ month");
-        expect(sliderInput).toHaveValue("75000");
-        expect(switchInput).toBeChecked();
-
+        expectAfterEach("75k pageviews", "$31.00/ month", "75000", true);
         userEvent.click(switchInput);
-
-        expect(pageViews).toHaveTextContent("75k pageviews");
-        expect(pricePerMonth).toHaveTextContent("$37.00/ month");
-        expect(sliderInput).toHaveValue("75000");
-        expect(switchInput).not.toBeChecked();
+        expectAfterEach("75k pageviews", "$37.00/ month", "75000", false);
 
         fireEvent.change(sliderInput, {
             target: {
@@ -56,32 +55,23 @@ describe("PricingForm component", () => {
             },
         });
 
-        expect(pageViews).toHaveTextContent("25k pageviews");
-        expect(pricePerMonth).toHaveTextContent("$12.00/ month");
-        expect(sliderInput).toHaveValue("25000");
-        expect(switchInput).not.toBeChecked();
-
+        expectAfterEach("25k pageviews", "$12.00/ month", "25000", false);
         userEvent.click(switchInput);
-
-        expect(pageViews).toHaveTextContent("25k pageviews");
-        expect(pricePerMonth).toHaveTextContent("$10.00/ month");
-        expect(sliderInput).toHaveValue("25000");
-        expect(switchInput).toBeChecked();
+        expectAfterEach("25k pageviews", "$10.00/ month", "25000", true);
 
         fireEvent.change(sliderInput, {
             target: {
                 value: "50000",
             },
         });
-
-        expect(pageViews).toHaveTextContent("50k pageviews");
-        expect(pricePerMonth).toHaveTextContent("$20.00/ month");
-        expect(sliderInput).toHaveValue("50000");
-        expect(switchInput).toBeChecked();
+        
+        expectAfterEach("50k pageviews", "$20.00/ month", "50000", true);
     });
-    test("PricingFormSubmit component rendering", () => {
-        render(<PricingFormSubmit />);
+});
 
+describe("PricingFormSubmit component rendering", () => {
+    it("renders", () => {
+        render(<PricingForm />);
         const listItem = screen.getAllByRole("listitem")[0];
         const submitButton = screen.getByTestId("start-my-trial");
 
