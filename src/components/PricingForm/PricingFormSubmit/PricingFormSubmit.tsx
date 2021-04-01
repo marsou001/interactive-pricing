@@ -28,7 +28,7 @@ function PricingFormSubmit() {
                     Email reports
                 </PricingFormSubmitBenefitsListItem>
             </PricingFormSubmitBenefitsList>
-            <PricingFormSubmitButton type="submit" value="Start my trial" />
+            <PricingFormSubmitButton type="submit" data-testid='start-my-trial' value="Start my trial" />
         </PricingFormSubmitContainer>
     );
 }
