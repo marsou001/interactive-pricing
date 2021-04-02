@@ -46,7 +46,7 @@ function PricingFormSliderGrid({
 
     return (
         <PricingFormSliderGridContainer>
-            <PricingFormSliderGridPageViews data-testid="page-views">
+            <PricingFormSliderGridPageViews pageViews={pageViews} data-testid="page-views">
                 <div>
                     <span className="absolute">{displayedPageViews}</span>k
                     pageviews
