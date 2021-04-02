@@ -33,7 +33,7 @@ describe("PricingFormSliderGrid and PricingFormCheckbox components", () => {
     });
 
     test("initial rendering", () => {
-        expectAfterEach("50k pageviews", "$25.00/ month", "50000", false);
+        expectAfterEach("50k pageviews", "$25/ month", "50000", false);
     });
 
     test("values after sliding and clicking the hidden input box", () => {
@@ -43,11 +43,11 @@ describe("PricingFormSliderGrid and PricingFormCheckbox components", () => {
             },
         });
 
-        expectAfterEach("75k pageviews", "$37.00/ month", "75000", false);
+        expectAfterEach("75k pageviews", "$37/ month", "75000", false);
         userEvent.click(switchHiddenInput);
-        expectAfterEach("75k pageviews", "$31.00/ month", "75000", true);
+        expectAfterEach("75k pageviews", "$31/ month", "75000", true);
         userEvent.click(switchHiddenInput);
-        expectAfterEach("75k pageviews", "$37.00/ month", "75000", false);
+        expectAfterEach("75k pageviews", "$37/ month", "75000", false);
 
         fireEvent.change(sliderInput, {
             target: {
@@ -55,9 +55,9 @@ describe("PricingFormSliderGrid and PricingFormCheckbox components", () => {
             },
         });
 
-        expectAfterEach("25k pageviews", "$12.00/ month", "25000", false);
+        expectAfterEach("25k pageviews", "$12/ month", "25000", false);
         userEvent.click(switchHiddenInput);
-        expectAfterEach("25k pageviews", "$10.00/ month", "25000", true);
+        expectAfterEach("25k pageviews", "$10/ month", "25000", true);
 
         fireEvent.change(sliderInput, {
             target: {
@@ -65,7 +65,7 @@ describe("PricingFormSliderGrid and PricingFormCheckbox components", () => {
             },
         });
 
-        expectAfterEach("50k pageviews", "$20.00/ month", "50000", true);
+        expectAfterEach("50k pageviews", "$20/ month", "50000", true);
     });
 
     test("hitting the Spacebar key on the hidden checkbox", () => {
@@ -74,7 +74,7 @@ describe("PricingFormSliderGrid and PricingFormCheckbox components", () => {
             () =>
                 expectAfterEach(
                     "50k pageviews",
-                    "$20.00/ month",
+                    "$20/ month",
                     "50000",
                     true
                 ),
@@ -88,7 +88,7 @@ describe("PricingFormSliderGrid and PricingFormCheckbox components", () => {
             () =>
                 expectAfterEach(
                     "50k pageviews",
-                    "$25.00/ month",
+                    "$25/ month",
                     "50000",
                     false
                 ),
@@ -104,7 +104,7 @@ describe("PricingFormSliderGrid and PricingFormCheckbox components", () => {
             () =>
                 expectAfterEach(
                     "50k pageviews",
-                    "$20.00/ month",
+                    "$20/ month",
                     "50000",
                     true
                 ),
@@ -118,7 +118,7 @@ describe("PricingFormSliderGrid and PricingFormCheckbox components", () => {
             () =>
                 expectAfterEach(
                     "50k pageviews",
-                    "$20.00/ month",
+                    "$20/ month",
                     "50000",
                     true
                 ),
@@ -134,9 +134,9 @@ describe("PricingFormSliderGrid and PricingFormCheckbox components", () => {
         );
 
         userEvent.click(customCheckbox);
-        expectAfterEach("50k pageviews", "$20.00/ month", "50000", true);
+        expectAfterEach("50k pageviews", "$20/ month", "50000", true);
         userEvent.click(customCheckbox);
-        expectAfterEach("50k pageviews", "$25.00/ month", "50000", false);
+        expectAfterEach("50k pageviews", "$25/ month", "50000", false);
     });
 });
 
