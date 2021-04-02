@@ -32,29 +32,36 @@ function PricingFormSliderGrid({
     handleChange,
 }: PricingFormSliderGridProps): JSX.Element {
     const pageviews: string = pageViews.toString().replace(/000$/, "");
-    const displayedPageViews: string = parseInt(pageViews) >= 10_000 ? pageviews : `0${pageviews}`;  
+    const displayedPageViews: string =
+        parseInt(pageViews) >= 10_000 ? pageviews : `0${pageviews}`;
 
     const monthlyPrice: number = Math.floor(parseInt(pageViews) / 2);
     const annualPrice: number = Math.floor(monthlyPrice * (10 / 12));
     const price: number = isAnnual ? annualPrice : monthlyPrice;
+    const modifiedPrice: string = price
+        .toFixed(2)
+        .toString()
+        .replace(/\d{3}(?=\.00)/, "");
+    const displayedPrice: string =
+        /\d{2}\.00/.test(modifiedPrice) ? modifiedPrice : `0${modifiedPrice}`;
 
     return (
         <PricingFormSliderGridContainer>
-            <PricingFormSliderGridPageViews data-testid='page-views'>
-                <div><span className='absolute'>{displayedPageViews}</span>k pageviews</div>
+            <PricingFormSliderGridPageViews data-testid="page-views">
+                <div>
+                    <span className="absolute">{displayedPageViews}</span>k
+                    pageviews
+                </div>
             </PricingFormSliderGridPageViews>
             <PricingFormSlider
                 pageViews={pageViews}
                 thumbBackgroundColorOnFocus={thumbBackgroundColorOnFocus}
                 handleChange={handleChange}
             />
-            <PricingFormSliderGridPrice data-testid='price-per-month'>
+            <PricingFormSliderGridPrice data-testid="price-per-month">
                 <span className="price">
                     $
-                    {price
-                        .toFixed(2)
-                        .toString()
-                        .replace(/\d{3}(?=\.00)/, "")}
+                    {displayedPrice === '0.00' ? '00.00' : displayedPrice}
                 </span>
                 <span className="period">/ month</span>
             </PricingFormSliderGridPrice>
