@@ -10,6 +10,7 @@ const PricingFormSliderGridPrice = styled.span`
         position: relative;
         display: inline-block;
         width: 110px;
+        margin: .5rem 0;
         .price {
             color: hsl(227, 35%, 25%);
             font-size: 1.9rem;
