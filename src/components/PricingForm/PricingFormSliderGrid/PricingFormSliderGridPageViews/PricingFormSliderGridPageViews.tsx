@@ -16,6 +16,7 @@ const PricingFormSliderGridPageViews = styled.span`
         .absolute {
             position: absolute;
             left: -13px;
+            left: ${(props: PricingFormSliderGridPageViewsProps) => props.pageViews === '100000' ? '-20' : '-13'}px;
         }
     }
     @media screen and (min-width: 500px) {
