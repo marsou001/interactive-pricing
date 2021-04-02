@@ -15,13 +15,11 @@ const PricingFormSliderGridPrice = styled.span`
             font-size: 1.9rem;
             font-weight: 700;
             position: absolute;
-            top: -19px;
+            top: -15px;
             left: 8px;
         }
         .period {
-            display: inline-block;
-            margin-left: 5px;
-            transform: translateY(-5px);
+            display: inline-block;            
         }
     }
 `;
