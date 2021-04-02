@@ -1,4 +1,4 @@
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import PricingForm from "./PricingForm";
 
@@ -36,7 +36,7 @@ describe("PricingFormSliderGrid and PricingFormCheckbox components", () => {
         expectAfterEach("50k pageviews", "$25.00/ month", "50000", false);
     });
 
-    test("values after sliding and checking the hidden input box", () => {
+    test("values after sliding and clicking the hidden input box", () => {
         fireEvent.change(sliderInput, {
             target: {
                 value: "75000",
@@ -66,12 +66,74 @@ describe("PricingFormSliderGrid and PricingFormCheckbox components", () => {
         });
 
         expectAfterEach("50k pageviews", "$20.00/ month", "50000", true);
-
     });
-    test('values after toggling the custom checkbox', () => {
-        const customCheckbox: HTMLElement = screen.getByTestId('custom-checkbox');
-        
-        userEvent.click(customCheckbox);        
+
+    test("hitting the Spacebar key on the hidden checkbox", () => {
+        fireEvent.keyDown(switchHiddenInput, { code: "Spacebar" });
+        waitFor(
+            () =>
+                expectAfterEach(
+                    "50k pageviews",
+                    "$20.00/ month",
+                    "50000",
+                    true
+                ),
+            {
+                timeout: 0,
+            }
+        );
+
+        fireEvent.keyDown(switchHiddenInput, { code: "Spacebar" });
+        waitFor(
+            () =>
+                expectAfterEach(
+                    "50k pageviews",
+                    "$25.00/ month",
+                    "50000",
+                    false
+                ),
+            {
+                timeout: 0,
+            }
+        );
+    });
+
+    test("hitting the Enter key on the hidden checkbox", () => {
+        fireEvent.keyDown(switchHiddenInput, { code: "Enter" });
+        waitFor(
+            () =>
+                expectAfterEach(
+                    "50k pageviews",
+                    "$20.00/ month",
+                    "50000",
+                    true
+                ),
+            {
+                timeout: 0,
+            }
+        );
+
+        fireEvent.keyDown(switchHiddenInput, { code: "Enter" });
+        waitFor(
+            () =>
+                expectAfterEach(
+                    "50k pageviews",
+                    "$20.00/ month",
+                    "50000",
+                    true
+                ),
+            {
+                timeout: 0,
+            }
+        );
+    });
+
+    test("values after toggling the custom checkbox", () => {
+        const customCheckbox: HTMLElement = screen.getByTestId(
+            "custom-checkbox"
+        );
+
+        userEvent.click(customCheckbox);
         expectAfterEach("50k pageviews", "$20.00/ month", "50000", true);
         userEvent.click(customCheckbox);
         expectAfterEach("50k pageviews", "$25.00/ month", "50000", false);
