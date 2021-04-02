@@ -58,9 +58,9 @@ function PricingFormCheckbox({
     const handleHiddenInputKeyDown = (
         e: React.KeyboardEvent<HTMLInputElement>
     ): void => {
-        if (e.key === " " || e.key === "Enter") {
+        if (e.code === "Spacebar" || e.code === "Enter") {
             handleEvent();
-        }
+        }        
     };
     return (
         <>
