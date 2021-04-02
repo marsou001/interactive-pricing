@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const PricingFormSubmitButton = styled.input`
     font-size: inherit;
-    color: inherit;
+    color: hsl(225, 35%, 91%);
     background-color: hsl(227, 35%, 25%);
     padding: 10px 35px;
     border: none;
