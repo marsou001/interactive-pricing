@@ -41,10 +41,8 @@ function PricingFormSliderGrid({
     const modifiedPrice: string = price
         .toFixed(2)
         .toString()
-        .replace(/\d{3}(?=\.00)/, "");
-    const displayedPrice: string = /\d{2}\.00/.test(modifiedPrice)
-        ? modifiedPrice
-        : `0${modifiedPrice}`;
+        .replace(/\d{3}\.00/, "");
+    const displayedPrice: string = parseInt(modifiedPrice) >= 10 ? modifiedPrice : `0${modifiedPrice}`;
 
     return (
         <PricingFormSliderGridContainer>
@@ -62,7 +60,7 @@ function PricingFormSliderGrid({
             <PricingFormSliderGridPrice data-testid="price-per-month">
                 <div>
                     <span className="price">
-                        ${displayedPrice === "0.00" ? "00.00" : displayedPrice}
+                        ${displayedPrice === '0' ? '00' : displayedPrice}
                     </span>
                     <span className="period">/ month</span>
                 </div>
