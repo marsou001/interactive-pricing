@@ -5,7 +5,7 @@ const PricingFormSliderGridPrice = styled.span`
     @media screen and (min-width: 500px) {
         text-align: right;
     }
-    >div {
+    >span {
         text-align: right;
         position: relative;
         display: inline-block;

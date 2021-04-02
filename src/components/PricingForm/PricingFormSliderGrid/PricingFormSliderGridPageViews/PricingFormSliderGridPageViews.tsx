@@ -9,7 +9,7 @@ const PricingFormSliderGridPageViews = styled.span`
     letter-spacing: 0.1rem;
     position: relative;
     grid-area: PageViews;
-    >div {
+    >span {
         position: relative;
         display: inline-block;
         width: 100px;
@@ -21,7 +21,7 @@ const PricingFormSliderGridPageViews = styled.span`
     }
     @media screen and (min-width: 500px) {
         text-align: left;
-        >div {
+        >span {
             padding-left: ${(props: PricingFormSliderGridPageViewsProps) => props.pageViews === '100000' ? '25' : '17'}px;
             .absolute {
                 left: 0px;

@@ -47,10 +47,10 @@ function PricingFormSliderGrid({
     return (
         <PricingFormSliderGridContainer>
             <PricingFormSliderGridPageViews pageViews={pageViews} data-testid="page-views">
-                <div>
+                <span>
                     <span className="absolute">{displayedPageViews}</span>k
                     pageviews
-                </div>
+                </span>
             </PricingFormSliderGridPageViews>
             <PricingFormSlider
                 pageViews={pageViews}
@@ -58,12 +58,12 @@ function PricingFormSliderGrid({
                 handleChange={handleChange}
             />
             <PricingFormSliderGridPrice data-testid="price-per-month">
-                <div>
+                <span>
                     <span className="price">
                         ${displayedPrice === '0' ? '00' : displayedPrice}
                     </span>
                     <span className="period">/ month</span>
-                </div>
+                </span>
             </PricingFormSliderGridPrice>
         </PricingFormSliderGridContainer>
     );
