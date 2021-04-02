@@ -8,7 +8,7 @@ import Discount from "./Discount/Discount";
 import VisuallyHiddenLabel from "../../../Utils/VisuallyHiddenLabel/VisuallyHiddenLabel";
 
 interface PricingFormCheckboxProps {
-    isYearly: boolean;
+    isAnnual: boolean;
     handleEvent: () => void;
 }
 
@@ -31,10 +31,10 @@ const PricingFormCheckboxContainer = styled.div`
 
 const MonthlyBilling = styled.span``;
 
-const YearlyBilling = styled.span``;
+const AnnualBilling = styled.span``;
 
 function PricingFormCheckbox({
-    isYearly,
+    isAnnual,
     handleEvent,
 }: PricingFormCheckboxProps): JSX.Element {
     const inputRef = useRef<HTMLInputElement>(null);
@@ -70,29 +70,29 @@ function PricingFormCheckbox({
                     <MonthlyBilling>Monthly billing</MonthlyBilling>
                     <CheckboxContainer>
                         <VisuallyHiddenLabel htmlFor="billing-type">
-                            Choose between monthly billing and yearly billing
+                            Choose between monthly billing and annual billing
                         </VisuallyHiddenLabel>
                         <Input
                             ref={inputRef}
                             type="checkbox"
                             role="switch"
                             id="billing-type"
-                            name="yearly"
+                            name="annual"
                             onClick={handleHiddenInputClick}
                             onFocus={handleHiddenInputFocus}
                             onBlur={handleHiddenInputBlur}
                             onKeyDown={handleHiddenInputKeyDown}
-                            aria-checked={isYearly}
+                            aria-checked={isAnnual}
                         />
                         <CustomCheckbox
                             ref={customCheckboxRef}
                             onClick={customCheckboxClick}
-                            className={isYearly ? "custom-checkbox-active" : ""}
+                            className={isAnnual ? "custom-checkbox-active" : ""}
                             aria-hidden="true"
                             data-testid='custom-checkbox'
                         />
                     </CheckboxContainer>
-                    <YearlyBilling>Yearly billing</YearlyBilling>
+                    <AnnualBilling>Annual billing</AnnualBilling>
                     <Discount>
                         -25% <span>discount</span>
                     </Discount>

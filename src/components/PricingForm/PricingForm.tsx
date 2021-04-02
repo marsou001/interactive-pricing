@@ -24,7 +24,7 @@ let thumbBackgroundColorOnFocus: string;
 
 function PricingCard(): JSX.Element {
     const [pageViews, setPageViews] = useState('50000');
-    const [isYearly, setIsYearly] = useState(false);
+    const [isAnnual, setIsAnnual] = useState(false);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
         thumbBackgroundColorOnFocus =
@@ -34,18 +34,18 @@ function PricingCard(): JSX.Element {
         setPageViews(e.target.value);
     };
 
-    const handleEvent = (): void => setIsYearly((prevState) => !prevState);
+    const handleEvent = (): void => setIsAnnual((prevState) => !prevState);
 
     return (
         <PricingFormContainer>
             <PricingFormSliderGrid
                 thumbBackgroundColorOnFocus={thumbBackgroundColorOnFocus}
                 pageViews={pageViews}
-                isYearly={isYearly}
+                isAnnual={isAnnual}
                 handleChange={handleChange}
             />
             <PricingFormCheckbox
-                isYearly={isYearly}
+                isAnnual={isAnnual}
                 handleEvent={handleEvent}
             />
             <PricingFormSubmit />
