@@ -3,10 +3,10 @@ import userEvent from "@testing-library/user-event";
 import PricingForm from "./PricingForm";
 
 describe("PricingFormSliderGrid and PricingFormCheckbox components", () => {
-    let pageViews: HTMLElement,
-        pricePerMonth: HTMLElement,
-        sliderInput: HTMLElement,
-        switchHiddenInput: HTMLElement;
+    let pageViews: HTMLSpanElement,
+        pricePerMonth: HTMLSpanElement,
+        sliderInput: HTMLInputElement,
+        switchHiddenInput: HTMLInputElement;
     const expectAfterEach = (
         pageViewsTextContent: string,
         pricePerMonthTextContent: string,
@@ -28,8 +28,8 @@ describe("PricingFormSliderGrid and PricingFormCheckbox components", () => {
         render(<PricingForm />);
         pageViews = screen.getByTestId("page-views");
         pricePerMonth = screen.getByTestId("price-per-month");
-        sliderInput = screen.getByRole("slider");
-        switchHiddenInput = screen.getByRole("switch");
+        sliderInput = screen.getByRole("slider") as HTMLInputElement;
+        switchHiddenInput = screen.getByRole("switch") as HTMLInputElement;
     });
 
     test("initial rendering", () => {
